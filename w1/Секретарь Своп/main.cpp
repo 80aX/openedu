@@ -40,19 +40,18 @@ void insertionsort(int n, int *m, std::ofstream &fout)
     
     for (j = 1; j < n; ++j) {
         for (i = j - 1; i >= 0 && m[i] > m[i + 1]; --i) {
-            k=i;
-            while (m[k-1] >= m[k])
-            {
+            k = i;
+            while (m[k - 1] >= m[k]) {
                 k--;
                 if (k == 0)
                     break;
             }
-                
-            temp = m[i+1];
-            m[i+1] = m[k];
+            
+            temp = m[i + 1];
+            m[i + 1] = m[k];
             m[k] = temp;
-            fout << "Swap elements at indices " << k + 1 << " and " << i+2 << ".\n";
-            i=k;
+            fout << "Swap elements at indices " << k + 1 << " and " << i + 2 << ".\n";
+            i = k;
         }
             
     }
