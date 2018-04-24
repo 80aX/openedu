@@ -17,8 +17,15 @@
 #include <fstream>
 
 
-void antiqucksort(int n, std::ofstream &fout)
+void antiqucksort(int n)
 {
+    std::ofstream fout("output.txt");
+    
+    if (n == 1) {
+        fout << "1\n";
+        return;
+    }
+    
     int *a = new int [n];
     a[0] = 1;
     a[1] = 2;
@@ -43,15 +50,11 @@ void antiqucksort(int n, std::ofstream &fout)
 int main()
 {
     std::ifstream fin("input.txt");
-    std::ofstream fout("output.txt");
     
     int n;
     fin >> n;
     
-    if (n > 1)
-        antiqucksort(n, fout);
-    else
-        fout << "1\n";
+    antiqucksort(n);
     
     return 0;
 }
