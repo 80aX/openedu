@@ -50,7 +50,7 @@ int main()
     
     int n, i;
     fin >> n;
-    int array[n];
+    int *array = new int[n];
     
     for (i = 0; i < n; ++i)
         fin >> array[i];
